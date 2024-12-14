@@ -25,7 +25,7 @@ function CategoryCard({ image, category, link }) {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default CategoryCard
+export default CategoryCard;
