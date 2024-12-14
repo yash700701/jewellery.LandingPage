@@ -23,35 +23,45 @@ const fadeIn = (direction, delay) => {
   }
 }
 
+const categories = [
+    {
+      image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw914040e5/homepage/shopByCategory/necklace-set-25-11-24.jpg",
+      category: "Necklaces",
+      link: "/necklaces",
+    },
+    {
+      image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwf83b74ea/homepage/shopByCategory/rings-25-11-24.jpg",
+      category: "Rings",
+      link: "/rings",
+    },
+    {
+      image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw4c162935/homepage/shopByCategory/earrings-25-11-24.jpg",
+      category: "Earrings",
+      link: "/earrings",
+    },
+  ];
+
+
 function Items() {
   return (
     <>
-    <div className='mt-16  text-center pt-8'>
-        <h1 className='text-4xl text-[#ffb71c]' style={{fontFamily: 'brilliant'}}>Shop By Category</h1>
+    <div className='mt-16 bg-white text-center pt-8'>
+        <h1 className='text-4xl text-gray-500' style={{fontFamily: 'brilliant'}}>Shop By Category</h1>
         <p className='p-3 text-white text-md' style={{fontFamily: 'Montserrat Alternates'}}>Browse through your favorite categories. We've got them all!</p>
-        <motion.ul
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{once:false, amount:0.7}} 
-         className='grid sm:grid-cols-3 justify-items-center  pt-20 pb-20 text-[#c08911] font-extralight text-lg' style={{fontFamily: 'Montserrat Alternates'}}>
-           <div className='flex'>
-           <li><CategoryCard data={{img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTvuLtP0960y8MhrthU2OhfASDYTzJV5cEA&s", category:"Mangalsutras"}}/></li>
-           <li><CategoryCard data={{img: "https://www.orra.co.in/media/catalog/product/cache/a062e776095ada03f265202079309f18/o/c/oco22007_4_1.jpg", category:"Gold Coins"}}/></li>
-           </div>
-            <div className='flex'>
-            <li><CategoryCard data={{img: "https://ratnagarbajewellers.com/wp-content/uploads/2024/08/Polished-Cut-Diamond-Earrings-1-1.jpg", category:"Earrings"}}/></li>
-            <li><CategoryCard data={{img: "https://i.ebayimg.com/images/g/5OMAAOSwxABkAJxf/s-l1200.jpg", category:"Finger Rings"}}/></li>
-            </div>
-            <div className='flex'>
-            <li><CategoryCard data={{img: "https://abhooshan.com/cdn/shop/products/il_300x300.3203438788_s9sb_8d474c47-9dd2-4678-aafc-4ae3a88032d0_medium.webp?v=1706776044", category:"Nose Pins"}}/></li>
-            <li><CategoryCard data={{img: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc6ce4dc0/images/hi-res/51M4D1VAM1A00_1.jpg?sw=480&sh=480", category:"Bangles"}}/></li>
-            </div>
-        </motion.ul>
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
+      {categories.map((item, index) => (
+        <CategoryCard
+          key={index}
+          image={item.image}
+          category={item.category}
+          link={item.link}
+        />
+      ))}
+    </div>
        
     </div>
-    <div className='text-center py-5 bg-orange-100'>
-        <h1 className='text-4xl text-[#7F2B0A]' style={{fontFamily: 'brilliant'}}>Shop By Collections</h1>
+    <div className='text-center pt-24 '>
+        <h1 className='text-4xl text-gray-500' style={{fontFamily: 'brilliant'}}>Shop By Collections</h1>
         <CategoryCardSwiper/>
     </div>
    </> 

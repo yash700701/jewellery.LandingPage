@@ -34,14 +34,14 @@ function Home() {
               <div id='homeimg' className='sm:col-span-4 justify-self-center self-center'>
                 <ImageSlider/>
               </div>
-              <div id='displayText' className='sm:col-span-6 grid p-5'>
+              <div id='displayText' className='sm:col-span-6  grid p-5'>
                 <img src={stroke} className='col-start-1 row-start-1' alt="" />
                   <div id='block2' className='col-start-1 row-start-1' style={{fontFamily: 'brilliant'}}>
-                    <h1 className='text-[50px] sm:text-[60px]  text-white py-5'>Beautify Your<br/>Look.</h1>
-                    <p className='pt-5 text-white text-sm font-bold' style={{fontFamily: 'Montserrat Alternates', fontStyle: 'italic', fontWeight: '300'}}>We believe in providing the best jewellery as per your amazing choices and deliver to your door.</p>
+                    <h1 className='text-[50px] sm:text-[60px]  py-5'>Beautify Your<br/>Look.</h1>
+                    <p className='pt-5 text-sm font-bold' style={{fontFamily: 'Montserrat Alternates', fontStyle: 'italic', fontWeight: '300'}}>We believe in providing the best jewellery as per your amazing choices and deliver to your door.</p>
                     <div className=' mt-5 w-min grid auto-cols-min auto-rows-min group/shop'>
-                      <div className='transform translate-x-[5px] translate-y-[5px] col-start-1 row-start-1 rounded-tl-[12px] rounded-br-[12px] rounded-tr-[1px] rounded-bl-[1px] border-[1px] border-yellow-50 w-40 h-10 group-hover/shop:translate-x-[6px] group-hover/shop:translate-y-[6px] duration-300'></div>
-                      <button className='transform translate-x-0  translate-y-0 col-start-1 row-start-1 px-5 py-1 rounded-tl-[9px] rounded-br-[9px] rounded-tr-[1px] rounded-bl-[1px] bg-amber-800 text-orange-100 group-hover/shop:-translate-x-[2px] group-hover/shop:-translate-y-[2px] duration-300 ' style={{fontFamily: 'Montserrat Alternates', fontWeight: '900'}}>SHOP NOW</button>
+                      <div className='transform translate-x-[5px] translate-y-[5px] col-start-1 row-start-1 rounded-tl-[12px] rounded-br-[12px] rounded-tr-[1px] rounded-bl-[1px] border-[1px] border-gray-700 w-40 h-10 group-hover/shop:translate-x-[6px] group-hover/shop:translate-y-[6px] duration-300'></div>
+                      <button className='transform translate-x-0  translate-y-0 col-start-1 row-start-1 px-5 py-1 rounded-tl-[9px] rounded-br-[9px] rounded-tr-[1px] rounded-bl-[1px] border-[1px] border-black group-hover/shop:-translate-x-[2px] group-hover/shop:-translate-y-[2px] duration-300 ' style={{fontFamily: 'Montserrat Alternates', fontWeight: '900'}}>SHOP NOW</button>
                     </div>
                   </div>
               </div>
