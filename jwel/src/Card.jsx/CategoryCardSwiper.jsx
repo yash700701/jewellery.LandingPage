@@ -5,22 +5,25 @@ import "slick-carousel/slick/slick-theme.css";
 import ring from '../images/ring.jpg'
 import bres from '../images/bres.jpg'
 import hand from '../images/hand.jpg'
-import { div } from 'framer-motion/client';
-import necklace from '../videos/necklace.mp4'
+import { div, span } from 'framer-motion/client';
+import necklaceVid from '../videos/necklace.mp4'
+import earringVid from '../videos/earring.mp4'
+import ringVid from '../videos/ring.mp4'
+import explore from '../icons/explore.png'
 
 const categories = [
   {
-    video: necklace,
+    video: necklaceVid,
     category: "Necklaces",
     link: "/necklaces",
   },
   {
-    video: earring,
+    video: ringVid,
     category: "Rings",
     link: "/rings",
   },
   {
-    video: ring,
+    video: earringVid,
     category: "Earrings",
     link: "/earrings",
   },
@@ -52,7 +55,9 @@ function CategoryCardSwiper() {
   var settings = {
     // dots: true,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
@@ -77,13 +82,28 @@ function CategoryCardSwiper() {
               {/* <img src={item.image} className='rounded-t-xl object-contain' alt="" /> */}
               <video class=" rounded-3xl h-96 w-full object-cover" autoPlay muted loop>
                 <source
-                  src={necklace}
+                  src={item.video}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
-              <div className='absolute bottom-5 pl-5'>
-                <h1 className='text-7xl text-white'><span className='text-black'>.</span>..</h1>
+              <div className='absolute mb-3 pl-5 bottom-0 '>
+                <div className=' text-5xl font-bold'>{item.category}</div>
+                <button
+                    className="group  mt-5 -mb-5 flex py-2  border-[1px] border-white pl-4 pr-8 rounded-lg transition"
+                    onClick={() => window.open(link, "_blank")}
+                  >
+                    Explore
+                    
+                    <img src={explore} className='w-5  mx-4 group-hover:translate-x-4 duration-150 my-auto' alt="" />
+                    
+                  </button>
+                <div className='flex'>
+                  <h1 className='text-7xl text-white'>
+                    {item.category=="Necklaces" ? <span><span className='text-black'>.</span>..</span> : item.category=="Earrings" ? <span>..<span className='text-black'>.</span></span> : item.category=="Rings" ? <span>.<span className='text-black'>.</span>.</span> : null}
+                  </h1>
+                  
+                </div>
               </div>
                
             </div>
