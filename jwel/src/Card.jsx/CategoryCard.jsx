@@ -1,5 +1,7 @@
 import React from 'react'
 import explore from '../icons/explore.png'
+import { Link } from 'react-router-dom';
+import { li } from 'framer-motion/client';
 
 function CategoryCard({ image, category, link }) {
    
@@ -14,15 +16,13 @@ function CategoryCard({ image, category, link }) {
       {/* Category Info */}
       <div className="absolute bottom-4 left-4 text-white">
         <h2 className="text-3xl font-bold">{category}</h2>
-        <button
+        <Link
+        to={link}
           className="mt-3 group flex py-2 border-[1px] border-white px-5 rounded-lg transition"
-          onClick={() => window.open(link, "_blank")}
         >
-          Explore
-          
+          Explore 
           <img src={explore} className='w-5  mx-4 group-hover:translate-x-4 duration-150 my-auto' alt="" />
-          
-        </button>
+        </Link>
       </div>
     </div>
   );

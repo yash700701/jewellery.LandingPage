@@ -3,26 +3,6 @@ import CategoryCard from './Card.jsx/CategoryCard'
 import CategoryCardSwiper from './Card.jsx/CategoryCardSwiper'
 import { motion } from 'framer-motion'
 
-const fadeIn = (direction, delay) => {
-  return{
-      hidden:{
-          y: direction === 'up' ? 20 : direction === 'down' ? -40 : 0,
-          x: direction === 'left' ? 20 : direction === 'right' ? -40 : 0,
-      },
-      show:{
-          y: 0,
-          x: 0,
-          opacity: 1,
-          transition: {
-              type: 'tween',
-              duration: 1.2,
-              delay: delay,
-              ease: [0.25, 0.25, 0.25, 0.75],
-          }
-      }
-  }
-}
-
 const categories = [
     {
       image: "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw914040e5/homepage/shopByCategory/necklace-set-25-11-24.jpg",

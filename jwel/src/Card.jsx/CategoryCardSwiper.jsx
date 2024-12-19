@@ -88,7 +88,7 @@ function CategoryCardSwiper() {
                 Your browser does not support the video tag.
               </video>
               <div className='absolute mb-3 pl-5 bottom-0 '>
-                <div className=' text-5xl font-bold'>{item.category}</div>
+                <div className=' text-5xl text-white font-bold'>{item.category}</div>
                 <button
                     className="group  mt-5 -mb-5 flex py-2  border-[1px] border-white pl-4 pr-8 rounded-lg transition"
                     onClick={() => window.open(link, "_blank")}

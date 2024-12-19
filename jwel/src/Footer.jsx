@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer class="text-gray-300 pt-4" style={{fontFamily: 'Montserrat Alternates'}}>
+    <footer class="bg-slate-200 mt-10 pt-4" style={{fontFamily: 'Montserrat Alternates'}}>
   <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-start md:place-items-center gap-8 p-2">
    
     {/* <div>
