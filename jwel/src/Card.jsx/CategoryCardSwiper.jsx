@@ -10,6 +10,7 @@ import necklaceVid from '../videos/necklace.mp4'
 import earringVid from '../videos/earring.mp4'
 import ringVid from '../videos/ring.mp4'
 import explore from '../icons/explore.png'
+import { Link } from 'react-router-dom';
 
 const categories = [
   {
@@ -89,7 +90,8 @@ function CategoryCardSwiper() {
               </video>
               <div className='absolute mb-3 pl-5 bottom-0 '>
                 <div className=' text-5xl text-white font-bold'>{item.category}</div>
-                <button
+                <Link
+                    to={item.link}
                     className="group  mt-5 -mb-5 flex py-2  border-[1px] border-white pl-4 pr-8 rounded-lg transition"
                     onClick={() => window.open(link, "_blank")}
                   >
@@ -97,7 +99,7 @@ function CategoryCardSwiper() {
                     
                     <img src={explore} className='w-5  mx-4 group-hover:translate-x-4 duration-150 my-auto' alt="" />
                     
-                  </button>
+                  </Link>
                 <div className='flex'>
                   <h1 className='text-7xl text-white'>
                     {item.category=="Necklaces" ? <span><span className='text-black'>.</span>..</span> : item.category=="Earrings" ? <span>..<span className='text-black'>.</span></span> : item.category=="Rings" ? <span>.<span className='text-black'>.</span>.</span> : null}

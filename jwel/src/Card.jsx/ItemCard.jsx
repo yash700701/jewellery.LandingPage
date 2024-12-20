@@ -5,14 +5,15 @@ import { useSelector, useDispatch } from 'react-redux'
 function ItemCard({ image, price, itemsLeft, slug, id, name, description }) {
   
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+    <div className="max-w-sm bg-white border border-black rounded-lg shadow-lg p-4">
     {/* Item Image */}
     <img
       src={image}
       alt="Item"
       className="w-full h-48 object-cover rounded-t-lg"
     />
-    <div className="p-4">
+    <div className="py-4">
+      <p className='pb-4 font-bold text-2xl'>{name}</p>
       {/* Price */}
       <h2 className="text-xl font-bold text-gray-800 mb-2">
         ₹{price.toLocaleString()}
@@ -25,7 +26,7 @@ function ItemCard({ image, price, itemsLeft, slug, id, name, description }) {
     {/* Buy Now Button */}
     <Link
     to={slug}
-    className="w-full border-[1px] border-black  text-lg py-2 rounded-lg mt-4  transition"
+    className="w-full border-[1px] px-2 border-black  text-lg py-2 rounded-lg mt-4  transition"
       disabled={itemsLeft === 0}
     >
       {itemsLeft > 0 ? "Buy Now" : "Out of Stock"}

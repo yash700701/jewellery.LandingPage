@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NecklaceItems from './NecklaceItemsPage.jsx'
 import Layout from './videos/Layout.jsx'
 import ProductPage from './ProductPage.jsx'
+import Cart from './Cart.jsx'
 
 const Router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const Router = createBrowserRouter([
   {
     path: "/necklaces/:slug",
     element: <ProductPage/>,
-},
+  },
+  {
+    path: "/cart",
+    element: <Cart/>,
+  },
 
 ])
 

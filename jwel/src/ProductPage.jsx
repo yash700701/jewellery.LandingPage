@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import items from './NecklaceItems';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from './store/cart';
+import Header from './Header';
 
 function ProductPage() {
     const {slug} = useParams()
@@ -22,8 +23,10 @@ function ProductPage() {
          setQuantity(quantity - 1 < 1 ? 1 : quantity - 1)
     }
 
+    const [m, sm] = useState("")
     const dispatch = useDispatch() 
     const handleAddToCart = ()=>{
+        sm("item added to cart")
         dispatch(addToCart({
             productId: detail.id,
             quantity: quantity
@@ -36,14 +39,16 @@ function ProductPage() {
     
     
   return (
-    <div className="max-w-4xl mt-20 mx-auto p-6 bg-white shadow-md rounded-lg">
+    <>
+    <Header/>
+    <div className="max-w-4xl mt-16 border-black border-[1px]  mx-4 p-6 bg-white shadow-md rounded-lg">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Product Image */}
       <div>
         <img
           src={detail.image}
           alt={detail.image}
-          className="w-full h-96 object-cover rounded-lg"
+          className="w-full h-80 object-cover rounded-lg"
         />
       </div>
 
@@ -65,17 +70,17 @@ function ProductPage() {
               : "Out of stock"}
           </p>
         </div>
-        <div className='flex'>
-        <button onClick={incQuantity} className='px-2 border-2 border-black rounded-md'>+</button>
-          <p className='px-5'>{quantity}</p>
+        <div className='flex my-2'>
           <button onClick={decQuantity} className='px-2 border-2 border-black rounded-md'>-</button>
+          <p className='px-5'>{quantity}</p>
+          <button onClick={incQuantity} className='px-2 border-2 border-black rounded-md'>+</button>
         </div>
 
         {/* Add to Cart Button */}
         <button
           onClick={handleAddToCart}
           disabled={detail.itemsLeft === 0}
-          className={`mt-6 px-6 py-2 text-white rounded-lg ${
+          className={`mt-4 px-6 py-2 text-white rounded-lg ${
             detail.itemsLeft > 0
               ? "bg-blue-500 hover:bg-blue-600"
               : "bg-gray-400 cursor-not-allowed"
@@ -83,9 +88,11 @@ function ProductPage() {
         >
           {detail.itemsLeft > 0 ? "Add to Cart" : "Out of Stock"}
         </button>
+        <p className='text-green-500 pt-2 text-sm'>{m}</p>
       </div>
     </div>
   </div>
+  </>
   )
 }
 
