@@ -29,7 +29,7 @@ function Home() {
 
       <div className='h-screen w-screen'>
         <div className='grid grid-flow-col'>
-          <img  className='col-start-1 row-start-1 w-screen h-screen -z-10' style={{maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'}} src={backgroundImage} alt="bgImg" />
+          <img  className='col-start-1 row-start-1 w-screen h-screen -z-10' style={{maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'}} src={backgroundImage} alt="bgImg" loading='lazy'/>
           <div className='grid place-items-center sm:grid-cols-10 col-start-1 row-start-1 h-screen'>
               <div id='homeimg' className='sm:col-span-4 justify-self-center self-center'>
                 <ImageSlider/>

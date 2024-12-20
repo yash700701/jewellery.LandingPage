@@ -58,7 +58,7 @@ function ImageSlider() {
                   </clipPath>
               </defs>
           </svg>
-          <img className='w-80 h-80' style={{clipPath: 'url(#clip-path)'}} src={`${images[index].img}`} alt="" />
+          <img className='w-80 h-80' style={{clipPath: 'url(#clip-path)'}} src={`${images[index].img}`} alt="" loading='lazy' />
         </div>
     </div>
   )
